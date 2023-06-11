@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="15.0">
+  <PropertyGroup Condition="$(Platform) == 'X64'">
+    <wxWidgetLibPath>$(MSBuildThisFileDirectory)lib\vc_x64_dll</wxWidgetLibPath>
+    <wxWidgetLibVer>330u</wxWidgetLibVer>
+    <wxWidgetLibPrefix>wxbase$(wxWidgetLibVer)</wxWidgetLibPrefix>
+    <wxWidgetLibMswPrefix>wxmsw$(wxWidgetLibVer)</wxWidgetLibMswPrefix>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PreprocessorDefinitions>WXWIDGETS_PACKAGE_PATH=R"($(MSBuildThisFileDirectory))";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(wxWidgetLibPath);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <Target Name="wxWidgets_CopyFiles" BeforeTargets="Build">
+    <!--ItemGroup>
+      <wxWidgetsDebug Include="$(wxWidgetLibPath)\**\$(wxWidgetLibPrefix)d_*.dll;$(wxWidgetLibPath)\**\$(wxWidgetLibPrefix)d_*.pdb"/>
+      <wxWidgetsRelease Include="$(wxWidgetLibPath)\**\$(wxWidgetLibPrefix)_*.dll;$(wxWidgetLibPath)\**\$(wxWidgetLibPrefix)_*.pdb"/>
+      <wxWidgetsMswDebug Include="$(wxWidgetLibPath)\**\$(wxWidgetLibMswPrefix)d_*.dll;$(wxWidgetLibPath)\**\$(wxWidgetLibMswPrefix)d_*.pdb"/>
+      <wxWidgetsMswRelease Include="$(wxWidgetLibPath)\**\$(wxWidgetLibMswPrefix)_*.dll;$(wxWidgetLibPath)\**\$(wxWidgetLibMswPrefix)_*.pdb"/>
+    </ItemGroup>
+    <Copy Condition="$(Configuration)=='Debug'" SourceFiles="@(wxWidgetsDebug);@(wxWidgetsMswDebug)" DestinationFolder="$(OutDir)\%(RecursiveDir)" SkipUnchangedFiles="true"/>
+    <Copy Condition="$(Configuration)=='Release'" SourceFiles="@(wxWidgetsRelease);@(wxWidgetsMswRelease)" DestinationFolder="$(OutDir)\%(RecursiveDir)" SkipUnchangedFiles="true"/-->
+    <PropertyGroup>
+      <wxWidgetsDebug>$(wxWidgetLibPrefix)d_*.dll $(wxWidgetLibPrefix)d_*.pdb $(wxWidgetLibMswPrefix)d_*.dll $(wxWidgetLibMswPrefix)d_*.pdb</wxWidgetsDebug>
+      <wxWidgetsRelease>$(wxWidgetLibPrefix)_*.dll $(wxWidgetLibPrefix)_*.pdb $(wxWidgetLibMswPrefix)_*.dll $(wxWidgetLibMswPrefix)_*.pdb</wxWidgetsRelease>
+    </PropertyGroup>
+    <Exec Condition="$(Configuration)=='Debug'" Command="ROBOCOPY &quot;$(wxWidgetLibPath)&quot; &quot;$(OutDir).&quot; $(wxWidgetsDebug) /S >NUL" IgnoreExitCode="true"/>
+    <Exec Condition="$(Configuration)=='Release'" Command="ROBOCOPY &quot;$(wxWidgetLibPath)&quot; &quot;$(OutDir).&quot; $(wxWidgetsRelease) /S >NUL" IgnoreExitCode="true"/>
+  </Target>
+</Project>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>wxWidgets</id>
+        <authors>Julian Smart</authors>
+        <version>3.3.0</version>
+        <description>Cross-Platform C++ GUI Library</description>
+        <tags>native nativepackage C++ wxWidgets</tags>
+    </metadata>
+    <files>
+        <file src="include\**\*"    target="build\native\include" />
+        <file src="lib\**\*"        target="build\native\lib"     />
+        <file src="wxWidgets.props" target="build\native"         />
+    </files>
+</package>
