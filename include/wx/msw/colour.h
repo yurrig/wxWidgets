@@ -44,7 +44,9 @@ public:
             && m_alpha == colour.m_alpha;
     }
 
+#if __cplusplus < 202002L
     bool operator!=(const wxColour& colour) const { return !(*this == colour); }
+#endif
 
     WXCOLORREF GetPixel() const { return m_pixel; }
 
