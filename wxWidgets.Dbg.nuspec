@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>wxWidgets.Dbg</id>
+        <authors>Julian Smart</authors>
+        <version>3.2.2.1-smd</version>
+        <description>Cross-Platform C++ GUI Library</description>
+        <tags>native nativepackage C++ wxWidgets</tags>
+    </metadata>
+    <files>
+        <file src="lib\vc_x64_dll\**\*ud*.dll"    target="build\native\lib\vc_x64_dll"     />
+        <file src="lib\vc_x64_dll\**\*ud*.lib"    target="build\native\lib\vc_x64_dll"     />
+        <file src="lib\vc_x64_dll\**\*ud*.pdb"    target="build\native\lib\vc_x64_dll"     />
+        <file src="lib\vc_x64_dll\wxtiffd.lib"    target="build\native\lib\vc_x64_dll"     />
+        <file src="lib\vc_x64_dll\wxtiffd.pdb"    target="build\native\lib\vc_x64_dll"     />
+        <file src="lib\vc_x64_dll\wxjpegd.lib"    target="build\native\lib\vc_x64_dll"     />
+        <file src="lib\vc_x64_dll\wxjpegd.pdb"    target="build\native\lib\vc_x64_dll"     />
+        <file src="lib\vc_x64_dll\wxpngd.lib"     target="build\native\lib\vc_x64_dll"     />
+        <file src="lib\vc_x64_dll\wxpngd.pdb"     target="build\native\lib\vc_x64_dll"     />
+        <file src="lib\vc_x64_dll\wxzlibd.lib"    target="build\native\lib\vc_x64_dll"     />
+        <file src="lib\vc_x64_dll\wxzlibd.pdb"    target="build\native\lib\vc_x64_dll"     />
+        <file src="lib\vc_x64_dll\wxexpatd.lib"   target="build\native\lib\vc_x64_dll"     />
+        <file src="lib\vc_x64_dll\wxexpatd.pdb"   target="build\native\lib\vc_x64_dll"     />
+        <file src="wxWidgets.Dbg.props" target="build\native"         />
+    </files>
+</package>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>wxWidgets.Rel</id>
+        <authors>Julian Smart</authors>
+        <version>3.2.2.1-smd</version>
+        <description>Cross-Platform C++ GUI Library</description>
+        <tags>native nativepackage C++ wxWidgets</tags>
+    </metadata>
+    <files>
+        <file src="lib\vc_x64_dll\**\*u_*.dll"   target="build\native\lib\vc_x64_dll"     />
+        <file src="lib\vc_x64_dll\**\*u_*.lib"   target="build\native\lib\vc_x64_dll"     />
+        <file src="lib\vc_x64_dll\**\*u_*.pdb"   target="build\native\lib\vc_x64_dll"     />
+        <file src="lib\vc_x64_dll\wxbase*u.lib"  target="build\native\lib\vc_x64_dll"     />
+        <file src="lib\vc_x64_dll\wxbase*u.pdb"  target="build\native\lib\vc_x64_dll"     />
+        <file src="lib\vc_x64_dll\wxregexu.lib"  target="build\native\lib\vc_x64_dll"     />
+        <file src="lib\vc_x64_dll\wxregexu.pdb"  target="build\native\lib\vc_x64_dll"     />
+        <file src="lib\vc_x64_dll\wxtiff.lib"    target="build\native\lib\vc_x64_dll"     />
+        <file src="lib\vc_x64_dll\wxtiff.pdb"    target="build\native\lib\vc_x64_dll"     />
+        <file src="lib\vc_x64_dll\wxjpeg.lib"    target="build\native\lib\vc_x64_dll"     />
+        <file src="lib\vc_x64_dll\wxjpeg.pdb"    target="build\native\lib\vc_x64_dll"     />
+        <file src="lib\vc_x64_dll\wxpng.lib"     target="build\native\lib\vc_x64_dll"     />
+        <file src="lib\vc_x64_dll\wxpng.pdb"     target="build\native\lib\vc_x64_dll"     />
+        <file src="lib\vc_x64_dll\wxzlib.lib"    target="build\native\lib\vc_x64_dll"     />
+        <file src="lib\vc_x64_dll\wxzlib.pdb"    target="build\native\lib\vc_x64_dll"     />
+        <file src="lib\vc_x64_dll\wxexpat.lib"   target="build\native\lib\vc_x64_dll"     />
+        <file src="lib\vc_x64_dll\wxexpat.pdb"   target="build\native\lib\vc_x64_dll"     />
+        <file src="wxWidgets.Rel.props" target="build\native"         />
+    </files>
+</package>

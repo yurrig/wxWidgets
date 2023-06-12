@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="15.0">
+  <PropertyGroup Condition="$(Platform) == 'X64'">
+    <wxWidgetRelLibPath>$(MSBuildThisFileDirectory)lib\vc_x64_dll</wxWidgetRelLibPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <Link>
+      <AdditionalLibraryDirectories>$(wxWidgetRelLibPath);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <Target Name="wxWidgetsRel_CopyFiles" BeforeTargets="Build" Condition="$(Configuration) == 'Release'">
+    <PropertyGroup>
+      <wxWidgetsModules1>$(wxWidgetLibPrefix)_vc_*.dll $(wxWidgetLibPrefix)_vc_*.pdb</wxWidgetsModules1>
+      <wxWidgetsModules2>$(wxWidgetLibMswPrefix)_core_vc_*.dll $(wxWidgetLibMswPrefix)_core_vc_*.pdb</wxWidgetsModules2>
+      <wxWidgetsModules3>$(wxWidgetLibMswPrefix)_aui_vc_*.dll $(wxWidgetLibMswPrefix)_aui_vc_*.pdb</wxWidgetsModules3>
+    </PropertyGroup>
+    <Exec Command="ROBOCOPY &quot;$(wxWidgetRelLibPath)&quot; &quot;$(OutDir).&quot; $(wxWidgetsModules1) $(wxWidgetsModules2) $(wxWidgetsModules3) /S >NUL" IgnoreExitCode="true"/>
+  </Target>
+</Project>

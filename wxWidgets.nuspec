@@ -3,13 +3,17 @@
     <metadata>
         <id>wxWidgets</id>
         <authors>Julian Smart</authors>
-        <version>3.3.0</version>
+        <version>3.2.2.1-smd</version>
         <description>Cross-Platform C++ GUI Library</description>
+        <dependencies>
+          <dependency id="wxWidgets.Dbg" version="3.2.2.1-smd"/>
+          <dependency id="wxWidgets.Rel" version="3.2.2.1-smd"/>
+        </dependencies>
         <tags>native nativepackage C++ wxWidgets</tags>
     </metadata>
     <files>
         <file src="include\**\*"    target="build\native\include" />
-        <file src="lib\**\*"        target="build\native\lib"     />
-        <file src="wxWidgets.props" target="build\native"         />
+        <file src="lib\**\*.h"      target="build\native\lib" />
+        <file src="wxWidgets.props" target="build\native" />
     </files>
 </package>
