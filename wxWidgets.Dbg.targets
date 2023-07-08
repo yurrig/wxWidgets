@@ -8,7 +8,7 @@
       <AdditionalLibraryDirectories>$(wxWidgetDbgLibPath);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
-  <Target Name="wxWidgetsDbg_CopyFiles" BeforeTargets="Build" Condition="$(Configuration) == 'Debug'">
+  <Target Name="wxWidgetsDbg_CopyFiles" BeforeTargets="Build" Condition="$(ConfigurationPurpose) == 'Debug'">
     <PropertyGroup>
       <wxWidgetsModules1>$(wxWidgetLibPrefix)d_vc_*.dll $(wxWidgetLibPrefix)d_vc_*.pdb</wxWidgetsModules1>
       <wxWidgetsModules2>$(wxWidgetLibMswPrefix)d_core_vc_*.dll $(wxWidgetLibMswPrefix)d_core_vc_*.pdb</wxWidgetsModules2>

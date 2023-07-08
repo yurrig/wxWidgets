@@ -8,7 +8,7 @@
       <AdditionalLibraryDirectories>$(wxWidgetRelLibPath);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
-  <Target Name="wxWidgetsRel_CopyFiles" BeforeTargets="Build" Condition="$(Configuration) == 'Release'">
+  <Target Name="wxWidgetsRel_CopyFiles" BeforeTargets="Build" Condition="$(ConfigurationPurpose) == 'Release'">
     <PropertyGroup>
       <wxWidgetsModules1>$(wxWidgetLibPrefix)_vc_*.dll $(wxWidgetLibPrefix)_vc_*.pdb</wxWidgetsModules1>
       <wxWidgetsModules2>$(wxWidgetLibMswPrefix)_core_vc_*.dll $(wxWidgetLibMswPrefix)_core_vc_*.pdb</wxWidgetsModules2>

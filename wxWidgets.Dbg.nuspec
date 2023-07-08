@@ -21,6 +21,6 @@
         <file src="lib\vc_x64_dll\wxzlibd.pdb"    target="build\native\lib\vc_x64_dll"     />
         <file src="lib\vc_x64_dll\wxexpatd.lib"   target="build\native\lib\vc_x64_dll"     />
         <file src="lib\vc_x64_dll\wxexpatd.pdb"   target="build\native\lib\vc_x64_dll"     />
-        <file src="wxWidgets.Dbg.props" target="build\native"         />
+        <file src="wxWidgets.Dbg.targets"         target="build\native"                    />
     </files>
 </package>
